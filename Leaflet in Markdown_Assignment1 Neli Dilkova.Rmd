@@ -1,0 +1,39 @@
+---
+title: "Developing Data Products, Assignment week 2"
+author: "Neli Dilkova-Gnoyke"
+date: "26 März 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## My first own Leaflet map
+
+
+---
+title: "Neli's map"
+author: "This is where I work"
+always_allow_html: yes
+---
+
+
+```{r, echo=FALSE, warning=FALSE}
+library(leaflet)
+
+neliicon <- makeIcon(
+  iconUrl = "http://icons.iconarchive.com/icons/google/noto-emoji-people-profession/128/10225-woman-teacher-light-skin-tone-icon.png",
+   iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+my_map <- leaflet()%>%
+  addTiles()%>%
+  addMarkers(lat=52.50309, lng=13.4499, 
+             icon = neliicon,
+             popup="Neli Dilkova's Office") 
+             
+my_map
+```
+
